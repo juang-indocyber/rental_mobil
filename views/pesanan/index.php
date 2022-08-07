@@ -175,7 +175,18 @@
 			</div>
 		</div>
 
-		<?php partial('footer') ?>
+	<script>
+	$(document).ready(function() {
+		$('#dataTable').DataTable( {
+			dom: 'Bfrtip',
+			buttons: [
+				'csv','excel', 'pdf', 'print'
+			]
+		} );
+	} );
+	
+	</script>
+	<?php partial('footer') ?>
 	</div>
 	</div>
 

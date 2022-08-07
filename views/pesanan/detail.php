@@ -53,7 +53,7 @@
 										Tanggal Pinjam <br>
 										Tanggal Kembali <br>
 										Mobil <br>
-										Total Harga <br>
+										Harga <br>
 										Jenis Bayar <br>
 									</div>
 									<div class="col-sm-1">

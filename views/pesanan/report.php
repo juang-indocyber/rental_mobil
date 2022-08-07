@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+	<link rel="shortcut icon" href="uploads/caricon.png">
 </head>
 
 <body>
@@ -35,6 +36,7 @@
 	                    					<th>Jenis Bayar</th>
                                             <th>Tanggal Pinjam</th>
                                             <th>Tanggal Kembali</th>
+											<th>Harga</th>
 										    <th>Total Harga</th>
 	                    				</tr>
 	                 				</thead>
@@ -45,7 +47,10 @@
 												<td><?= $pesanan->nama_pemesan ?></td>
 												<td><?= $pesanan->nama_mobil ?></td>
 												<td><?= $pesanan->jenis_bayar ?></td>
-                                                
+												<td><?= $pesanan->tgl_pinjam ?></td>
+												<td><?= $pesanan->tgl_kembali ?></td>
+												<td>Rp. <?= number_format($pesanan->harga, 2, ',', '.') ?></td>
+												<td>Rp. <?= number_format($pesanan->total_harga, 2, ',', '.') ?></td>
 											</tr>
 										<?php endwhile; ?>
 									</tbody>
@@ -55,7 +60,7 @@
 	
 <script>
 $(document).ready(function() {
-    $('#mauexport').DataTable( {
+    $('#dataTable').DataTable( {
         dom: 'Bfrtip',
         buttons: [
             'csv','excel', 'pdf', 'print'
