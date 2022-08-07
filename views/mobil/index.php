@@ -99,6 +99,9 @@
 								<h6 class="m-0 font-weight-bold text-primary">Daftar Mobil</h6>
 							</div>
 							<div class="card-body">
+								<div class="form-group">
+									<a href="<?= base_url('mobil/report') ?>" rel="noopener" target="_blank" class="btn btn-secondary"><i class="fas fa-print"></i> Print</a>
+								</div>
 								<?php if(checkSession('success')): ?>
 									<div class="alert alert-success alert-dismissible fade show" role="alert">
 							  			<?= getSession('success', true) ?>

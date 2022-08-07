@@ -2,7 +2,7 @@
 
 class M_Mobil extends Model {
 	public function lihat(){
-		$query = $this->setQuery('SELECT nama, tbl_merk.merk AS merk, jumlah_kursi, tbl_mobil.id as id FROM tbl_mobil INNER JOIN tbl_merk ON tbl_merk.id = tbl_mobil.id_merk');
+		$query = $this->setQuery('SELECT nama, tbl_merk.merk AS merk, jumlah_kursi, tbl_mobil.id as id, tbl_mobil.warna AS warna, tbl_mobil.tahun_beli AS tahun_beli FROM tbl_mobil INNER JOIN tbl_merk ON tbl_merk.id = tbl_mobil.id_merk');
 		$query = $this->execute();
 		return $query;
 	}

@@ -145,4 +145,15 @@ class C_Mobil extends Controller{
 			redirect('mobil');
 		}
 	}
+
+	public function report(){
+		$data = [
+			'aktif' => 'mobil',
+			'judul' => 'Data Mobil',
+			'data_merk' => $this->merk->lihat(),
+			'data_mobil' => $this->mobil->lihat(),
+			'no' => 1
+		];
+		$this->view('mobil/report', $data);
+	}
 }
