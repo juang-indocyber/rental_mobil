@@ -54,9 +54,11 @@
 										Tanggal Kembali <br>
 										Mobil <br>
 										Harga <br>
+										Total Harga <br>
 										Jenis Bayar <br>
 									</div>
 									<div class="col-sm-1">
+										: <br>
 										: <br>
 										: <br>
 										: <br>
@@ -70,6 +72,7 @@
 										<strong><?= $pesanan->tgl_kembali ?></strong><br>
 										<strong><?= $pesanan->nama_mobil ?></strong><br>
 										<strong>Rp. <?= number_format($pesanan->harga, 2, ',', '.') ?></strong><br>
+										<strong>Rp. <?= number_format($pesanan->total_harga, 2, ',', '.') ?></strong><br>
 										<strong><?= $pesanan->jenis_bayar ?></strong><br>
 									</div>
 								</div>
