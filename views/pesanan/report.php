@@ -23,7 +23,34 @@
 
 <body>
 <div class="container">
-				<div class="data-tables datatable-dark mt-5">
+				<div class="row mt-5">
+					<div class="col-9">
+						<h5>Filter Tanggal Pinjam</h5>
+						<form method="POST" action="<?= base_url('pesanan/report') ?>" enctype="multipart/form-data">
+							<div class="row mt-3">
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="tgl_awal">Tanggal Awal</label>
+										<input type="date" name="tgl_awal" value="<?= $filter_tgl_awal == '' ? '' : $filter_tgl_awal ?>" id="tgl_awal" required="required" autocomplete="off" class="form-control">
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label for="tgl_akhir">Tanggal Akhir</label>
+										<input type="date" name="tgl_akhir" value="<?= $filter_tgl_akhir == '' ? '' : $filter_tgl_akhir ?>" id="tgl_akhir" required="required" autocomplete="off" class="form-control">
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group"><br>
+										<button type="submit" class="btn btn-sm btn-success mt-2" name="cari"><i class="fa fa-search"></i> Cari</button>
+										<button type="submit" class="btn btn-sm btn-danger mt-2" name="reset"><i class="fa fa-ban"></i> Reset</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="data-tables datatable-dark mt-3">
 					
 					<!-- Masukkan table nya disini, dimulai dari tag TABLE -->
                     <table class="table table-bordered" id="dataTable" width="" cellspacing="0">

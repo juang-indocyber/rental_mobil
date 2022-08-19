@@ -110,10 +110,24 @@ class C_Pesanan extends Controller {
 	}
 
 	public function report(){
+		$filter_tgl_awal = ''; 
+		$filter_tgl_akhir = '';
+
+		if(isset($_POST['cari'])) {
+			$filter_tgl_awal = $_POST['tgl_awal']; 
+			$filter_tgl_akhir = $_POST['tgl_akhir'];
+		} else if(isset($_POST['reset'])) {
+			$filter_tgl_awal = ''; 
+			$filter_tgl_akhir = '';
+		}
+		// var_dump($filter_tgl_awal, $filter_tgl_akhir);
+		// var_dump($this->pesanan->lihat($filter_tgl_awal,$filter_tgl_akhir));
 		$data = [
 			'aktif' => 'pesanan',
 			'judul' => 'Report',
-			'data_pesanan' => $this->pesanan->lihat(),
+			'filter_tgl_awal' => $filter_tgl_awal,
+			'filter_tgl_akhir' => $filter_tgl_akhir,
+			'data_pesanan' => $this->pesanan->lihat($filter_tgl_awal,$filter_tgl_akhir),
 			'data_pemesan' => $this->pemesan->lihat(),
 			'data_mobil' => $this->mobil->lihat(),
 			'data_jenis_bayar' => $this->j_bayar->lihat(),
